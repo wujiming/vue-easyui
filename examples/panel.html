@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+</head>
+<body>
+<div id="p" v-ve-panel.closable="options" on-open="open" style="padding:10px;">
+    <p>panel content.</p>
+    <p>panel content.</p>
+</div>
+<script src="easyui/jquery.min.js"></script>
+<script src="easyui/jquery.easyui.min.js"></script>
+<script src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<script src="//cdn.bootcss.com/vue/1.0.26/vue.js"></script>
+<script src="../dist/vue-easyui.js"></script>
+<script>
+    var vm=new Vue({
+        el:'body',
+        data:{
+            options:{
+                title:'fuck',
+                content:'fuck me please!!'
+            }
+        },
+        methods:{
+            open:function(){
+                alert(1);
+            }
+        }
+    });
+
+    setTimeout(function(){
+        console.log('world');
+        vm.options.title='world'
+        vm.options.content="ok ok i will fuck u"
+        vm.options.border=false;
+    },2000)
+</script>
+</body>
+</html>
